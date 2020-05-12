@@ -30,6 +30,7 @@ app.once('ready', () => {
 
   window.once('closed', () => {
     window = null
+    db.close()
   })
 
   //database
@@ -44,6 +45,18 @@ app.once('ready', () => {
 //TODO: Register IPC listeners
 ipcMain.on('id:search', (e, item) => {
   console.log('ipcmain item', item)
+
+  let sqlString = `SELECT * FROM reservation WHERE id = ?`
+  let id = item
+
+  db.get(sqlString, [id], (err, row) => {
+    if(err) {
+      console.error(err.message)
+    }
+    return row ? 
+      console.log(row.id, row.price) :
+      console.log('no data found')
+  })
 })
 
 const initializeDb = () => {
