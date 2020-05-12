@@ -15,8 +15,8 @@
     </div>
 
     <div>
-      <h2>Results</h2>
-      
+      <h2>Result:</h2>
+      <div id="result"></div>
     </div>
 
     <script>
@@ -29,6 +29,19 @@
         const reservationId = document.querySelector('#search').value
 
         ipcRenderer.send('id:search', reservationId)
+      })
+    </script>
+
+    <script>
+      const div = document.querySelector('#result')
+
+      ipcRenderer.on('reservation:dataquery', (e, item) => {
+        const id = document.createTextNode("ID: " + item.id)
+        const seperator = document.createTextNode("\n")
+        const price = document.createTextNode("Price: " + item.price)
+        div.appendChild(id)
+        div.appendChild(seperator)
+        div.appendChild(price)
       })
     </script>
 

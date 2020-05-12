@@ -53,9 +53,11 @@ ipcMain.on('id:search', (e, item) => {
     if(err) {
       console.error(err.message)
     }
-    return row ? 
-      console.log(row.id, row.price) :
-      console.log('no data found')
+    
+    if(row) {
+      console.log(row.id, row.price)
+      window.webContents.send('reservation:dataquery', row)
+    }
   })
 })
 
