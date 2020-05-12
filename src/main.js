@@ -1,10 +1,12 @@
 const electron = require('electron')
 const path = require('path')
 const url = require('url')
+// const sqlite3 = require('sqlite3').verbose()
 
 const { app, BrowserWindow, Menu, ipcMain } = electron
 
 let window = null
+let db = null
 
 app.once('ready', () => {
   window = new BrowserWindow({
@@ -30,6 +32,8 @@ app.once('ready', () => {
     window = null
   })
 
+  //database
+  // initializeDb()
 
   //Menu
   const menu = Menu.buildFromTemplate(menuTemplate)
@@ -41,6 +45,14 @@ app.once('ready', () => {
 ipcMain.on('id:search', (e, item) => {
   console.log('ipcmain item', item)
 })
+
+// const initializeDb = () => {
+//   db = new sqlite3.Database('testing.db', sqlite3.OPEN_READONLY, (err) => {
+//     if(err) {
+//       console.error(err.message)
+//     }
+//   })
+// }
 
 //Menu template
 const menuTemplate = [

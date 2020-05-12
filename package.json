@@ -2,9 +2,17 @@
   "name": "learning-electron",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "electron ."
+  },
+  "build": {
+    "appId": "com.devin.learning-electron",
+    "files": [
+      "src/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ]
   },
   "repository": {
     "type": "git",
@@ -18,6 +26,7 @@
   "homepage": "https://github.com/devinryanriota/learning-electron#readme",
   "dependencies": {
     "electron": "^8.2.5",
+    "electron-builder": "^22.6.0",
     "sqlite3": "^4.2.0"
   }
 }
