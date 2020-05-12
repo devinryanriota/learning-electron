@@ -2,7 +2,7 @@ const electron = require('electron')
 const path = require('path')
 const url = require('url')
 
-const { app, BrowserWindow, Menu } = electron
+const { app, BrowserWindow, Menu, ipcMain } = electron
 
 let window = null
 
@@ -37,6 +37,11 @@ app.once('ready', () => {
 
 })
 
+//TODO: Register IPC listeners
+ipcMain.on('id:search', (e, item) => {
+  console.log('ipcmain item', item)
+})
+
 //Menu template
 const menuTemplate = [
   {
@@ -58,6 +63,9 @@ const menuTemplate = [
         click(item, focusedWindow) {
           focusedWindow.toggleDevTools()
         }
+      },
+      {
+        role: 'reload'
       }
     ]
   }
