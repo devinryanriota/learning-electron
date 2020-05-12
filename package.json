@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/devinryanriota/learning-electron#readme",
   "dependencies": {
-    "electron": "^8.2.5"
+    "electron": "^8.2.5",
+    "sqlite3": "^4.2.0"
   }
 }
