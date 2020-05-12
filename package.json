@@ -5,7 +5,9 @@
   "main": "src/main.js",
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "build": {
     "appId": "com.devin.learning-electron",
@@ -13,7 +15,31 @@
       "src/**/*",
       "node_modules/**/*",
       "package.json"
-    ]
+    ],
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
+    }
   },
   "repository": {
     "type": "git",
