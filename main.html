@@ -4,6 +4,26 @@
   </head>
   <body>
     <h1>looks like it works!</h1>
-    <input type="text"/>
+    <form>
+      <div>
+        <label>Reservation ID</label>
+        <input type="text" id="search" autofocus/>
+      </div>
+      <button type="submit"> Search </button>
+    </form>
+
+
+    <script>
+      const electron = require('electron')
+      const { ipcRenderer } = electron
+
+      const form = document.querySelector('form')
+      form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        console.log('testing submit')
+
+      })
+    </script>
+
   </body>
 </html>
