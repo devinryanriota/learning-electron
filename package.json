@@ -1,0 +1,22 @@
+{
+  "name": "learning-electron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devinryanriota/learning-electron.git"
+  },
+  "author": "Devin Ryan Riota <devinryanriota@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devinryanriota/learning-electron/issues"
+  },
+  "homepage": "https://github.com/devinryanriota/learning-electron#readme",
+  "dependencies": {
+    "electron": "^8.2.5"
+  }
+}
