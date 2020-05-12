@@ -5,9 +5,9 @@
 2. `npm start`
 
 # Sample DB Structure:
-Table: reservation
-id (varchar)
-price (integer)
+Table: reservation  
+id (varchar)  
+price (integer)  
 
 Sample Data:
 ```
