@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/main.js",
   "scripts": {
+    "postinstall": "electron-builder install-app-deps",
     "start": "electron ."
   },
   "build": {
@@ -24,9 +25,11 @@
     "url": "https://github.com/devinryanriota/learning-electron/issues"
   },
   "homepage": "https://github.com/devinryanriota/learning-electron#readme",
-  "dependencies": {
+  "devDependencies": {
     "electron": "^8.2.5",
-    "electron-builder": "^22.6.0",
+    "electron-builder": "^20.38.4"
+  },
+  "dependencies": {
     "sqlite3": "^4.2.0"
   }
 }
